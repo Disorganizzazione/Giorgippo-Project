@@ -1,6 +1,6 @@
 $TTL 86400
-@	       IN	SOA	       zeus.AziendaInformatica.it	admin.AziendaInformatica.it (
-	2014052002	;Serial
+@	       IN	SOA	       B-DNS.mazziamari.it	admin.mazziamari.it (
+	2017082002	;Serial
 	36000               	;Refresh
 	3600			;Retry
 	3600000		;Expire
@@ -8,8 +8,8 @@ $TTL 86400
 )
 
 ; Definizione dei server DNS e mail
-IN    NS    zeus.AziendaInformatica.it
-IN MX 10 ermes.AziendaInformatica.it
+IN    NS    zeus.mazziamari.it
+IN MX 10 ermes.mazziamari.it
 
 ; Definizione host
 tanato	IN	 A		192.168.6.1	# Router
