@@ -1,0 +1,10 @@
+$TTL    86400
+@	1D	IN	SOA	@	admin (
+	2016142002	;Serial
+	36000               	;Refresh
+	3600			;Retry
+	3600000		;Expire
+	36000		;Minimum
+)
+	1D	IN	NS	@
+	1D	IN	A	127.0.0.1
