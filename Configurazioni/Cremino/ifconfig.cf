@@ -1,1 +1,27 @@
- 
+ #-----------------
+#  CREMINO     #
+#-----------------
+
+# INTERNAL FIREWALL ROUTER: Caronte
+
+# Interfaccia sulla rete locale
+ifconfig eth0 192.168.2.3 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# Interfaccia sulla rete dell' Agenzia
+ifconfig eth1 192.168.1.31 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# Interfaccia sulla rete del Barificio
+ifconfig eth2 192.168.2.32 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# Interfaccia sulla rete della Destinazione
+ifconfig eth3 192.168.4.34 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# HOSTS
+    ##dinamico #vedi dhcp##
+
+
+# SERVER APP AZIENDALI Sociale
+ifconfig eth0 192.168.3.10 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# SERVER DHCP Corteo
+ifconfig eth0 212.10.3.20 netmask 255.255.0.0 broadcast 192.168.255.255

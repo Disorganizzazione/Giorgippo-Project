@@ -1,0 +1,17 @@
+#-----------------
+#  DESTINAZIONE     #
+#-----------------
+
+# INTERNAL FIREWALL ROUTER: Dite
+
+# Interfaccia sulla rete locale
+ifconfig eth0 192.168.4.3 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# Interfaccia sulla rete del Cremino
+ifconfig eth2 192.168.3.43 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# HOSTS
+
+ifconfig eth0 192.168.4.50 netmask 255.255.0.0 broadcast 192.168.255.255
+...
+ifconfig eth0 192.168.4.100 netmask 255.255.0.0 broadcast 192.168.255.255
