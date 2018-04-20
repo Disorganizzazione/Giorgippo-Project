@@ -1,0 +1,52 @@
+#-----------------
+#  BARIFICIO
+#-----------------
+
+# INTERIOR ROUTER Basilisco
+
+# Interfaccia sulla rete locale
+ifconfig eth0 192.168.2.3 netmask 255.255.255.0 broadcast 192.168.255.255
+
+# Interfaccia sulla rete dell' Agenzia
+ifconfig eth1 192.168.1.21 netmask 255.255.255.0 broadcast 192.168.255.255
+
+# Interfaccia sulla rete del Cremino
+ifconfig eth2 192.168.3.23 netmask 255.255.255.0 broadcast 192.168.255.255
+
+# Interfaccia con IP pubblico sulla DMZ
+ifconfig eth3 212.10.2.3 netmask 255.255.255.0 broadcast 192.168.255.255
+
+
+# EXTERIOR ROUTER Barista
+
+# Interfaccia con IP pubblico sulla DMZ
+ifconfig eth0 212.10.2.6 netmask 255.255.0.0 broadcast 212.10.255.255
+
+# Interfaccia con IP pubblico su Internet
+ifconfig eth1 180.28.68.43 netmask 255.255.255.255 broadcast 180.28.68.43
+
+# interfaccia pubblica su internet per connessione con Epitaffio
+ifconfig eth1 212.11.2.5 netmask 255.255.0.0 broadcast 180.28.255.255
+
+
+# HOSTS
+ifconfig eth0 192.168.22.30 netmask 255.255.0.0 broadcast 192.168.255.255
+...
+ifconfig eth0 192.168.22.250 netmask 255.255.0.0 broadcast 192.168.255.255
+...
+ifconfig eth0 192.168.2.30 netmask 255.255.0.0 broadcast 192.168.255.255
+...
+ifconfig eth0 192.168.2.70 netmask 255.255.0.0 broadcast 192.168.255.255
+
+
+# SERVER MAIL DMZ Mogano
+ifconfig eth0 212.10.2.20 netmask 255.255.0.0 broadcast 212.10.255.255
+
+# SERVER DNS DMZ Bouquet
+ifconfig eth0 212.10.2.10 netmask 255.255.0.0 broadcast 212.10.255.255
+
+# SERVER PROXY DMZ Rovere
+ifconfig eth0 212.10.2.40 netmask 255.255.0.0 broadcast 212.10.255.255
+
+# SERVER WEB DMZ Noce
+ifconfig eth0 212.10.2.30 netmask 255.255.0.0 broadcast 212.10.255.255
