@@ -1,0 +1,39 @@
+#-----------------
+#  EPITAFFIO     #
+#-----------------
+
+# INTERNAL FIREWALL ROUTER: Ecate
+
+# Interfaccia sulla rete locale
+ifconfig eth0 192.168.5.3 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# Interfaccia con IP pubblico sulla DMZ
+ifconfig eth3 212.10.5.3 netmask 255.255.0.0 broadcast 192.168.255.255
+
+
+# EXTERNAL FIREWALL ROUTER: Epigrafia
+
+# Interfaccia con IP pubblico sulla DMZ
+ifconfig eth0 212.10.5.6 netmask 255.255.0.0 broadcast 212.10.255.255
+
+# Interfaccia con IP pubblico su Internet
+ifconfig eth1 180.38.68.43 netmask 255.255.255.255 broadcast 180.38.68.43
+
+# interfaccia su internet per connessione con Epitaffio
+ifconfig eth1 212.11.5.2 netmask 255.255.0.0 broadcast 180.28.255.255
+
+
+# HOSTS
+ifconfig eth0 192.168.5.30 netmask 255.255.0.0 broadcast 192.168.255.255
+...
+ifconfig eth0 192.168.5.60 netmask 255.255.0.0 broadcast 192.168.255.255
+
+# SERVER BACKUP: Memorie
+ifconfig eth0 192.168.5.10 netmask 255.255.0.0 broadcast 192.168.255.255
+
+
+## NELLA DMZ
+
+# SERVER DNS Bouquet
+ifconfig eth0 212.10.5.10 netmask 255.255.0.0 broadcast 212.10.255.255
+
