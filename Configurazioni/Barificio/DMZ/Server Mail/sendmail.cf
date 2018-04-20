@@ -1,0 +1,79 @@
+# Sendmail
+# Copyright (c) 1983 Eric P. Allman
+#configurazione del server mail - file di riferimento :
+/etc/sendmail.cf
+
+#definizione MACRO utente
+Dwmail  #hostname
+DDmazziamari.it #impostazione dominio
+Dj$w.$D #nome del dominio ufficiale del sito
+De$j Sendmail $v ready at $ # messaggio iniziale SMTP
+DlFrom $g $d # formato della unix
+DnMAILER-DAEMON # messaggi d'errore
+Do.:%\@!^=/ # operatori indirizzi
+Dq$g$?x ($x)$. #indirizzo del mittente
+
+#definizione trusted users
+Troot
+Tdaemon
+Tuucp
+
+#priorità dei messaggi nelle code
+
+Pfirst-class=0
+Pspecial-delivery=100
+Pbulk=-60
+Pjunk=-100
+
+#formato delle intestazioni
+
+
+H?P?Return-Path: <$g> # path del mailer
+HReceived: $?sfrom $s $.by $j ($v/$Z) #ricevuta da
+H?D?Resent-Date: $a # data di partenza
+H?D?Date: $a
+H?F?Resent-From: $?x$x <$g>$|$g$. # forward
+H?F?From : $?x$x $|$g$. # nome mittente
+
+
+H?x?Full-Name: $x # impostazione fullname
+HPosted-Date: $a # data di partenza
+H?l?Received-Date: $b # data
+HSubject:
+H?M?Resent-Message-Id: <$t.$i@$j> # il ora attuale
+H?M?Message-Id: <$t.$i@$j> # ora in formato-id della
+
+
+#definizione delle opzioni
+
+OA/etc/alias # definizione del file
+degli alias
+OErrorHeader=/etc/sendmail.oE # messaggi di errore di
+header/file
+OF0600 # permesso per i temporary
+file
+OHman=/usr/lib/sendmail.hf # help nel file di
+sendmail
+OQueueDirectory=/var/spool/mqueue # directory queue
+OTimeout.queuereturn=5d # tempo di coda
+OTimeout.queuewarn=4h
+
+# file di stato
+OStatusFile=/var/tmp/sendmail.st
+
+#hosts file
+OHostsFile=/etc/hosts
+
+# per ostacolare gli spammer
+# impediamo agli spammer di usare i comandi di sendmail "EXPN" e "VRFY" spesso sfruttati da questi
+O PrivacyOptions=authwarnings,noexpn,novrfy
+
+
+#configurazione MAILER
+
+Mlocal, P=/bin/mail, F=rlsDFMmn, S=10, R=20, A=mail -d $u
+Mprog, P=/bin/sh, F=lsDFMe, S=10, R=20, A=sh -c $u
+Mtcpld, P=[ICP], F=mDFMueXLC, S=17, R=27, A=IPC $h, E=\r\n
+Mtcp, P=[ICP], F=mDFMueXLC, S=14, R=24, A=IPC $h, E=\r\n
+Muucp, P=/usr/bin/uux, F=DFMhuU, S=13, R=23, M=100000,
+A=uux - -r -z -a$f -gC $h!rmail ($u)
