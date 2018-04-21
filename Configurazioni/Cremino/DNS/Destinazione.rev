@@ -1,0 +1,16 @@
+@ IN SOA camino.cremino.mazziamari.it
+(
+	2005013001 ;serial
+	36000 ;refresh
+	2000 ;retry
+	360000 ;expire
+	200000 ;TTL
+)
+# nameserver
+IN NS camino.destinazione.mazziamari.it
+
+# host
+3.4 IN PTR dite
+50.4 IN PTR archivio01
+...
+100.4 IN PTR archivio50

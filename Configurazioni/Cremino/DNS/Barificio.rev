@@ -1,0 +1,23 @@
+@ IN SOA camino.cremino.mazziamari.it
+(
+	2005013001 ;serial
+	36000 ;refresh
+	2000 ;retry
+	360000 ;expire
+	200000 ;TTL
+)
+#nameserver
+IN NS camino.barificio.mazziamari.it
+
+
+#host
+
+3.2 IN PTR Basilisco 
+50.2 IN PTR barificio01 
+...
+90.2 IN PTR barificio40 
+
+3.22 IN PTR Basilisco
+30.22 IN PTR barificio041 
+...
+250.22 IN PTR barificio260 

@@ -1,0 +1,19 @@
+@ IN SOA camino.cremino.mazziamari.it
+(
+	2005013001 ;serial
+	36000 ;refresh
+	2000 ;retry
+	360000 ;expire
+	200000 ;TTL
+)
+#nameserver
+IN NS camino.epitaffio.mazziamari.it
+
+#host
+3.5 IN PTR Ecate
+30.5 IN PTR epitaffio1
+...
+60.5 IN PTR epitaffio50 
+
+#server
+10.5 IN PTR camino

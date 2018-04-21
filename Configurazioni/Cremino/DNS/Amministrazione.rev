@@ -1,0 +1,16 @@
+@ IN SOA camino.cremino.mazziamari.it
+(
+	2005013001 ;serial
+	36000 ;refresh
+	2000 ;retry
+	360000 ;expire
+	200000 ;TTL
+)
+# nameserver
+IN NS camino.amministrazione.mazziamari.it
+
+# host
+3.1 IN PTR Anubi
+50.1 IN PTR amministrazione01 
+...
+100.1 IN PTR amministrazione50
