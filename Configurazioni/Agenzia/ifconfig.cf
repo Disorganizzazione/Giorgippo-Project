@@ -2,16 +2,16 @@
 #  AGENZIA     #
 #-----------------
 
-# INTERNAL FIREWALL ROUTER: Agente
+# INTERNAL FIREWALL ROUTER: Anubi
 
 # Interfaccia sulla rete locale
-ifconfig eth0 192.168.1.3 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.1.3 netmask 255.255.255.0 broadcast 192.168.1.255
 
 # Interfaccia sulla rete del Cremino
-ifconfig eth2 192.168.3.13 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth2 192.168.3.13 netmask 255.255.255.0 broadcast 192.168.3.255
 
 # HOSTS
 
-ifconfig eth0 192.168.1.50 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.1.50 netmask 255.255.255.0 broadcast 192.168.1.255
 ...
-ifconfig eth0 192.168.1.100 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.1.100 netmask 255.255.255.0 broadcast 192.168.1.255

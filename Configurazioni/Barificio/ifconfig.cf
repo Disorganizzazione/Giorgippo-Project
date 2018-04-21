@@ -5,48 +5,48 @@
 # INTERNAL FIREWALL ROUTER: Basilisco
 
 # Interfaccia sulla rete locale
-ifconfig eth0 192.168.2.3 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.2.3 netmask 255.255.255.0 broadcast 192.168.2.255
 
 # Interfaccia sulla rete dell' Agenzia
-ifconfig eth1 192.168.1.21 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth1 192.168.1.21 netmask 255.255.255.0 broadcast 192.168.1.255
 
 # Interfaccia sulla rete del Cremino
-ifconfig eth2 192.168.3.23 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth2 192.168.3.23 netmask 255.255.255.0 broadcast 192.168.3.255
 
 # Interfaccia con IP pubblico sulla DMZ
-ifconfig eth3 212.10.2.3 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth3 212.10.2.3 netmask 255.255.255.0 broadcast 192.168.2.255
 
 
 # EXTERNAL FIREWALL ROUTER: Barista
 
 # Interfaccia con IP pubblico sulla DMZ
-ifconfig eth0 212.10.2.6 netmask 255.255.0.0 broadcast 212.10.255.255
+ifconfig eth0 212.10.2.6 netmask 255.255.255.0 broadcast 212.10.2.255
 
 # Interfaccia con IP pubblico su Internet
 ifconfig eth1 180.28.68.43 netmask 255.255.255.255 broadcast 180.28.68.43
 
 # interfaccia su internet per connessione con Epitaffio
-ifconfig eth1 212.11.2.5 netmask 255.255.0.0 broadcast 180.28.255.255
+ifconfig eth1 212.11.2.5 netmask 255.255.255.0 broadcast 180.28.2.255
 
 
 # HOSTS
-ifconfig eth0 192.168.22.30 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.22.30 netmask 255.255.255.0 broadcast 192.168.22.255
 ...
-ifconfig eth0 192.168.22.250 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.22.250 netmask 255.255.255.0 broadcast 192.168.22.255
 
-ifconfig eth0 192.168.2.30 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.2.30 netmask 255.255.255.0 broadcast 192.168.2.255
 ...
-ifconfig eth0 192.168.2.70 netmask 255.255.0.0 broadcast 192.168.255.255
+ifconfig eth0 192.168.2.70 netmask 255.255.255.0 broadcast 192.168.2.255
 
 ## NELLA DMZ
 # SERVER MAIL Mogano
-ifconfig eth0 212.10.2.20 netmask 255.255.0.0 broadcast 212.10.255.255
+ifconfig eth0 212.10.2.20 netmask 255.255.255.0 broadcast 212.10.2.255
 
 # SERVER DNS Bouquet
-ifconfig eth0 212.10.2.10 netmask 255.255.0.0 broadcast 212.10.255.255
+ifconfig eth0 212.10.2.10 netmask 255.255.255.0 broadcast 212.10.2.255
 
 # SERVER PROXY Rovere
-ifconfig eth0 212.10.2.40 netmask 255.255.0.0 broadcast 212.10.255.255
+ifconfig eth0 212.10.2.40 netmask 255.255.255.0 broadcast 212.10.2.255
 
 # SERVER WEB Noce
-ifconfig eth0 212.10.2.30 netmask 255.255.0.0 broadcast 212.10.255.255
+ifconfig eth0 212.10.2.30 netmask 255.255.255.0 broadcast 212.10.2.255
