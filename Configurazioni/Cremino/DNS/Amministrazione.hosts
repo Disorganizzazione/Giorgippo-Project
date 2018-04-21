@@ -9,11 +9,9 @@ $TTL 86400
 
 ; Definizione server DNS e mail
 IN NS Camino.Agenzia.mazziamari.it  
-IN MX 10 ermes.mazziamari.it
 
 ; Definizione host
 Anubi	    IN	A	192.168.1.3	    # Router
-host_1    	IN	A	192.168.1.50    # Host 1
+amministrazione1    	IN	A	192.168.1.50    # Host 1
 ...
-host_50	IN	A	192.168.1.100	    # Host 100
-
+amministrazione50		IN	A	192.168.1.100	    # Host 50

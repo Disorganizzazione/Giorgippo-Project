@@ -1,0 +1,18 @@
+$TTL 86400
+@	IN	SOA	    Camino.Cremino.mazziamari.it	admin.mazziamari.it {
+	2016141701 	    ;Serial
+	86400      		;Refresh
+	3600       		;Retry
+	604800     		;Expire
+	86400      		;Minimum
+}
+
+; Definizione server DNS e mail
+IN NS Camino.Epitaffio.mazziamari.it  
+
+; Definizione host
+Ecate	    IN	A	192.168.5.3	    # Router
+Memorie     IN  A   192.168.5.10    #Backup
+epitaffio1    	IN	A	192.168.1.30    # Host 1
+...
+epitaffio30		IN	A	192.168.1.60	# Host 30
