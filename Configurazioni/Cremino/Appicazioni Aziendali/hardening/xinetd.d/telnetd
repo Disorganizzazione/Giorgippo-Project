@@ -1,0 +1,11 @@
+service telnet {
+      socket_type = stream
+      protocol = tcp
+      disable = yes
+      flags= REUSE
+      wait = no
+      user = root
+      server = /usr/sbin/telnetd
+      log_on_failure += DURATION USERID
+      log_on_success += PID HOST EXIT
+}

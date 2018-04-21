@@ -1,0 +1,12 @@
+service ssh {
+      socket_type = stream
+      protocol = tcp
+      disable = no
+      flags = REUSE
+      wait = no
+      user = root
+      server = /usr/sbin/sshd
+      server_args = -c /etc/sshd_config
+      log_on_failure += DURATION USERID
+      log_on_success += PID HOST EXIT
+}

@@ -1,0 +1,7 @@
+# Host che possono accedere al server (tcp_wrappers)
+
+sshd: 192.168.3.0/24
+nfsd: 192.168.3.0/24, 192.168.5.0/24
+mountd: 192.168.3.0/24, 192.168.5.0/24
+statd: 192.168.3.0/24
+lockd: 192.168.3.0/24

@@ -1,0 +1,2 @@
+# Gli accessi non consentiti vengono loggati (tcp_wrappers)
+ALL:ALL: spawn /bin/date %c >> /var/log/denied.log
