@@ -1,5 +1,5 @@
 $TTL 86400
-@	IN	SOA	Eredità.mazziamari.it	admin.mazziamari.it (
+@	IN	SOA	Bouquet.mazziamari.it	admin.mazziamari.it (
 	2016142002	;Serial
 	36000      	;Refresh
 	3600		;Retry
@@ -8,22 +8,25 @@ $TTL 86400
 )
 
 ; Definizione dei server DNS e mail
+IN NS    Bouquet.mazziamari.it
 IN NS    Eredità.mazziamari.it
-IN MX 10 	Mogano.mazziamari.it
+IN MX 10 Mogano.mazziamari.it
 
 ; Definizione sottorete per edificio B
+2.3			IN		PTR		Basilisco.mazziamari.it.	# Router Interno
+2.6			IN		PTR		Barista.mazziamari.it.		# Router Esterno
 2.20		IN		PTR		Mogano.mazziamari.it.		# Server Mail
 2.30		IN		PTR		Noce.mazziamari.it.		    # Server Web
 2.40		IN		PTR		Rovere.mazziamari.it.		# Server Proxy
-5.10		IN		PTR		Eredità.mazziamari.it.		# Server DNS
+2.10		IN		PTR		Bouquet.mazziamari.it.		# Server DNS
 
 ; Definizioni sottorete DMZ edificio E
-5.6		IN	PTR	Eredità.mazziamari.it.		# Server DNS
+5.6		IN		PTR		Eredità.mazziamari.it.		# Server DNS
+5.3		IN		PTR		Ecate.mazziamari.it.		# Router Interno
+5.6		IN		PTR		Epigrafia.mazziamari.it.	# Router Esterno
 
 ;# 
-
-
-
+	
 
 
 

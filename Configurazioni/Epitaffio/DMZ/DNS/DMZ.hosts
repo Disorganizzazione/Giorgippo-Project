@@ -1,5 +1,5 @@
 $TTL 86400
-@	       IN	SOA	       Eredità.mazziamari.it	admin.mazziamari.it (
+@	       IN	SOA	       Bouquet.mazziamari.it	admin.mazziamari.it (
 	2016142002	;Serial
 	36000       ;Refresh
 	3600		;Retry
@@ -8,21 +8,24 @@ $TTL 86400
 )
 
 ; Definizione dei server DNS e mail
+IN    NS    Bouquet.mazziamari.it
 IN    NS    Eredità.mazziamari.it
-IN MX 10 Mogano.mazziamari.it
+IN 	  MX 10 Mogano.mazziamari.it
 
 ; Definizione host B
 Basilisco	IN		A			212.10.2.3		# Router Interno
 Barista		IN		A			212.10.2.6		# Router Esterno
-Noce		IN		A			212.10.2.30		# Server Web
+Noce		IN		A			12.10.2.30		# Server Web
 www			IN		CNAME	Noce				# Alias del Server Web
 Mogano		IN		A 			212.10.2.20		# Server Mail
 mail		IN		CNAME	Mogano				# Alias del Server Mail
 Rovere		IN		A			212.10.2.40		# Server Proxy
-dns			IN		CNAME	Eredità				# Alias del Server DNS
+dns			IN		CNAME	Bouquet				# Alias del Server DNS
 
 ;Definizione host E
 Eredità		IN		A			212.10.5.10 	# Server DNS
-Memorie		IN		A			192.168.5.20 	# Server Backup
+Ecate		IN		A			212.10.5.3		# Router Interno
+Epigrafia	IN		A			212.10.5.6		# Router Esterno
+
 
 ;#

@@ -9,7 +9,8 @@ $TTL 86400
 
 ; Definizione dei server DNS e mail
 IN    NS    Bouquet.mazziamari.it
-IN MX 10 Mogano.mazziamari.it
+IN    NS    Eredità.mazziamari.it
+IN 	  MX 10 Mogano.mazziamari.it
 
 ; Definizione host B
 Basilisco	IN		A			212.10.2.3		# Router Interno
@@ -23,6 +24,8 @@ dns			IN		CNAME	Bouquet				# Alias del Server DNS
 
 ;Definizione host E
 Eredità		IN		A			212.10.5.10 	# Server DNS
-Memorie		IN		A			192.168.5.20 	# Server Backup
+Ecate		IN		A			212.10.5.3		# Router Interno
+Epigrafia	IN		A			212.10.5.6		# Router Esterno
+
 
 ;#
