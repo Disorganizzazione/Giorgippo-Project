@@ -73,7 +73,7 @@ In oltre, in base a quanto richiesto, si è deciso di configurare:
 I vari server forniscono servizi agli utenti della rete e servono per il funzionamento stesso della rete.\\
 Il \textbf{Server Mail} si occupa di fornire servizi per la posta elettronica, il \textbf{Server Web} permette a tutte le postazioni della rete di poter accedere alla rete Internet.\\
 Nel \textbf{Server per le applicazioni aziendali} risiedono programmi applicativi in uso all’Azienda.\\
-I tre \textbf{Server DNS} si occupano di tradurre un indirizzo della forma http://www.mazziamari.it, in uno espresso in forma numerica (richiesta per l’accesso ad Internet). Per questo motivo tutte le macchine che accedono ad Internet devono avere specificato il loro DNS Server.\\
+I tre \textbf{Server DNS} si occupano di tradurre un indirizzo della forma \url{http://www.mazziamari.it}, in uno espresso in forma numerica (richiesta per l’accesso ad Internet). Per questo motivo tutte le macchine che accedono ad Internet devono avere specificato il loro DNS Server.\\
 Nel \textbf{Server di Backup} verranno salvati i dati generati dai vari programmi applicativi in uso in modo da garantire una copia di sicurezza.\\
 I sopracitati server sono così disposti:
 \begin{table}[H]
@@ -113,21 +113,221 @@ Per il collegamento a internet degli edifici Barificio ed Epitaffio, si è decis
 \subsection{A: Agenzia}
 \image[../Configurazioni/Agenzia/Agenzia.png][scale=0.28]{Dettaglio sottoreterete 1}
 All'edificio Agenzia è stata assegnata la sottorete con indirizzo \textbf{192.168.1.0/24} (unica sottorete per l'edificio, visto il numero esiguo di utenti che deve ospitare) \\
-Questa è raggiungibile tramite il router \textbf{Anubi} con indirizzo \textbf{192.168.1.3}, tramite le interfacce \textit{192.168.2.12} per \textit{Barificio} e \textit{192.168.2.12} per \textit{Cremino}.
+Questa è raggiungibile tramite il router \textbf{Anubi} con indirizzo \textbf{192.168.1.3}, tramite le interfacce \textit{192.168.2.12} per \textit{Barificio} e \textit{192.168.3.13} per \textit{Cremino}.
+
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Dispositivo}} & \multicolumn{1}{c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{IP}} \\ \hline
+Router & Anubi & 192.168.1.3 \\ \hline
+Host 1 & agenzia01 & 192.168.1.50 \\ \hline
+... & ... & ...\\ \hline
+Host 50 & agenzia50 & 192.168.1.100 \\ \hline
+\end{tabular}
+\caption{Riepilogo A}
+\end{table}
+
+
+
 \subsection{B: Barificio}
 \image[../Configurazioni/Barificio/Barificio.png][scale=0.25]{Dettaglio sottoreterete 2}
 
+All'edificio Barificio sono state assegnate le sottoreti con indirizzo \textbf{192.168.2.0/24} e \textbf{192.168.22.0/24} (due sottorete per l'edificio B, visto il numero cospicuo di utenti che deve ospitare) \\
+Queste sono raggiungibili tramite il router \textbf{Basilisco} con indirizzo 212.10.2.3, tramite le interfacce \textit{192.168.1.21} per \textit{Agenzia} e \textit{192.168.3.23} per \textit{Cremino}, che comunica cone le due sottoreti mediante le sue interfacce \textbf{192.168.2.3} e \textbf{192.168.22.3}.
+
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Dispositivo}} & \multicolumn{1}{c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{IP}} \\ \hline
+Interfaccia1 & Basilisco & 192.168.2.3 \\ \hline
+Host 1 & barificio01 & 192.168.2.50 \\ \hline
+... & ... & ...\\ \hline
+Host 50 & barificio40 & 192.168.2.90 \\ \hline
+Interfaccia2 & Basilisco & 192.168.22.3 \\ \hline
+Host 51 & barificio41 & 192.168.22.30 \\ \hline
+... & ... & ...\\ \hline
+Host 260 & barificio260 & 192.168.22.260 \\ \hline
+\end{tabular}
+\caption{Riepilogo B}
+\end{table}
+
+
+\subsubsection{DMZ}
+Nell’edificio B è presente anche la DMZ, nella quale sono inclusi i server che devono risultare accessibili anche dall’esterno della rete. Alla DMZ è stata assegnata la rete \textbf{212.10.2.0/24}.\\
+Agli estremi della DMZ sono presenti \textbf{due router / firewall} che svolgono funzione di filtraggio e protezione per la rete: 
+\begin{itemize}
+\item il firewall-router interno \textbf{Basilisco} con indirizzo \textbf{212.10.2.3}  protegge la DMZ dagli accessi provenienti dalla LAN
+\item il firewall-router esterno \textbf{Barista}, che comunica con internet, con indirizzo \textbf{212.10.2.6} protegge la DMZ dagli accessi esterni.
+\end{itemize}
+In particolare il firewall collocato tra la LAN e la DMZ filtra i pacchetti in transito mediante le due catene \textit{dmzlan e landmz}, svolgendo anche la funzione di NAT.\\
+Allo stesso modo il firewall esterno usa le due catene \textit{inetdmz e dmzinet} per effettuare \textit{packet filtering} tra Internet e la DMZ.
+
+
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Dispositivo}} & \multicolumn{1}{c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{IP}} \\ \hline
+Firewall/Router Interno & Basilisco & 212.10.2.3 \\ \hline
+Firewall/Router Esterno & Barista & 212.10.2.6 \\ \hline
+DNS server & Bouquet & 212.10.2.10 \\ \hline
+Mail server & Mogano & 212.10.2.20 \\ \hline
+Web server & Noce & 212.10.2.30 \\ \hline
+Proxy server & Rovere & 212.10.2.40 \\ \hline
+\end{tabular}
+\caption{Riepilogo B}
+\end{table}
+
+
 \subsection{C: Cremino}
 \image[../Configurazioni/Cremino/Cremino.png][scale=0.28]{Dettaglio sottoreterete 3}
+All'edificio Cremino è stata assegnata la sottorete con indirizzo \textbf{192.168.3.0/24}\\
+Questa è raggiungibile tramite il router \textbf{Caronte} con indirizzo \textbf{192.168.3.3}, tramite le interfacce \textit{192.168.1.31} per \textit{Agenzia}, \textit{192.168.2.32} per \textit{Barificio} e \textit{192.168.4.34} per \textit{Destinazione}.\\
+La sottorete è usufruibile dagli host in forma wireless, mediante gli access points collocati in vari punti dell'edificio; E’ una rete che può presentare un numero variabile di hosts (max 200) in base a quanti utenti vi si connettono. Per questo motivo, si è deciso di assegnare agli hosts presenti un \textbf{indirizzo dinamico} tramite DHCP in un range che varia da 192.168.3.50 a .250.\\
+Di conseguenza, nel suddetto edificio sarà presente un \textbf{server DHCP} (e un server per le applicazioni aziendali).\\
+Infine è presente un server DNS interno, adibito alla risoluzione dei nomi degli host della LAN.
 
+
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Dispositivo}} & \multicolumn{1}{c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{IP}} \\ \hline
+Router & Caronte & 192.168.3.3 \\ \hline
+DNS server & Camino & 192.168.3.10 \\ \hline
+DHCP server & Corteo & 192.168.3.20 \\ \hline
+Server app aziendali & Social & 192.168.3.30 \\ \hline
+Host 1 & agenzia01 & 192.168.3.50 \\ \hline
+... & ... & ...\\ \hline
+Host 50 & agenzia50 & 192.168.3.250 \\ \hline
+\end{tabular}
+\caption{Riepilogo C}
+\end{table}
+
+\newpage
 \subsection{D: Destinazione}
 \image[../Configurazioni/Destinazione/Destinazione.png][scale=0.28]{Dettaglio sottoreterete 4}
+All'edificio Destinazione è stata assegnata la sottorete con indirizzo \textbf{192.168.4.0/24} (unica sottorete per l'edificio, visto il numero esiguo di utenti che deve ospitare) \\
+Questa è raggiungibile tramite il router \textbf{Dite} con indirizzo \textbf{192.168.3.3}, tramite l'interfaccia \textit{192.168.3.43} per \textit{Cremino}.
+
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Dispositivo}} & \multicolumn{1}{c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{IP}} \\ \hline
+Router & Dite & 192.168.3.3 \\ \hline
+Host 1 & destinazione01 & 192.168.3.50 \\ \hline
+... & ... & ...\\ \hline
+Host 50 & destinazione50 & 192.168.3.100 \\ \hline
+\end{tabular}
+\caption{Riepilogo D}
+\end{table}
+
 
 \subsection{E: Epitaffio}
 \image[../Configurazioni/Epitaffio/Epitaffio.png][scale=0.25]{Dettaglio sottoreterete 5}
+All'edificio Epitaffio è stata assegnata la sottorete con indirizzo \textbf{192.168.5.0/24} (unica sottorete per l'edificio, visto il numero esiguo di utenti che deve ospitare) 
+
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Dispositivo}} & \multicolumn{1}{c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{IP}} \\ \hline
+Interfaccia & Ecate & 192.168.5.3 \\ \hline
+Host 1 & epitaffio01 & 192.168.5.30 \\ \hline
+... & ... & ...\\ \hline
+Host 30 & epitaffio40 & 192.168.5.60 \\ \hline
+Backup server & Memorie & 192.168.5.10 \\ \hline
+\end{tabular}
+\caption{Riepilogo E}
+\end{table}
+
+\subsubsection{Rete intermedia} 
+\image[../Configurazioni/DMZ.png][scale=0.2]{Dettaglio rete intermedia delle DMZ}
+L'edificio E deve poter essere raggiunto sia dall'edificio B che dall'edificio D: data la distanza da essi, si è deciso di farli comunicare mediante \textbf{VPN}.\\
+A tal scopo abbiamo deciso di far comunicare E direttamente con internet (con opportuna aggiunta di DMZ) ed abbiamo creato una rete privata che connette la DMZ di E con la DMZ di B, corrispondente all'indirizzo \textbf{212.11.0.0/16}. Ciò è reso possibile facendo comunicare l'interfaccia \textit{212.11.5.2} del router esterno di E \textbf{Epigrafia} con indirizzo \textbf{212.10.5.6}, con l'interfaccia \textit{212.11.2.5} del router esterno di B.\\
+Così facendo, E può comunicare con B mediante suddetta rete e con D passando per B e C.
 
 
+\subsubsection{DMZ}
+Nell’edificio E è presente anche la DMZ, nella quale è presente il server DNS. Alla DMZ è stata assegnata la rete \textbf{212.10.5.0/24}.\\
+Agli estremi della DMZ sono presenti \textbf{due router / firewall} che svolgono funzione di filtraggio e protezione per la rete: 
+\begin{itemize}
+\item il firewall-router interno \textbf{Ecate} con indirizzo \textbf{212.10.5.3}  protegge la DMZ dagli accessi provenienti dalla LAN
+\item il firewall-router esterno \textbf{Epigrafia}, che comunica con internet, con indirizzo \textbf{212.10.5.6} protegge la DMZ dagli accessi esterni.
+\end{itemize}
+I firewall lavorano in modo analogo a quelli della DMZ dell'edificio B.
 
 
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Dispositivo}} & \multicolumn{1}{c|}{\textbf{Nome}} & \multicolumn{1}{c|}{\textbf{IP}} \\ \hline
+Firewall/Router Interno & Ecate & 212.10.5.3 \\ \hline
+Firewall/Router Esterno & Epigrafia & 212.10.5.6 \\ \hline
+DNS server & Eredità & 212.10.5.10 \\ \hline
+\end{tabular}
+\caption{Riepilogo DMZ E}
+\end{table}
+\newpage
+
+\section{Routing}
+Per quanto riguarda il routing all'interno della rete:
+\begin{itemize}
+\item Per gli edifici A, B, C si è deciso di utilizzare un routing dinamico configurando il protocollo \textbf{RIP} (Routing Information Protocol), un protocollo di routing interno basato su metrica vettore-distanza, gestito nel nostro caso dal demone \textit{gated}.
+\item Per gli edifici E, D e la rete intermedia 212.11.0.0 si è deciso di utilizzare un routing statico tramite il comando \textbf{route add}, essendoci una sola strada percorribile per giungervi.
+\end{itemize}
+
+\section{DNS}
+Nella rete sono presenti tre server DNS: due esterni, che risiedono nelle due DMZ, ed uno interno.\\
+\begin{itemize}
+\item I DNS esterni sono situati nella DMZ dell'edificio B (\textit{Bouquet}) e in quella dell'edificio E (\textit{Eredità}) e sono 
+\begin{itemize}
+\item master dei server della DMZ (i due DNS traducono in nomi gli indirizzi dei server cui si accede dall'esterno - ciò permette la presenza online dell'azienda)
+\item slave tra di loro per la risoluzione dei nomi di internet
+\end{itemize} 
+\item Il DNS interno, posto nell'edificio C (\textit{Camino}), è:
+\begin{itemize}
+\item master delle reti interne (esso permette di accedere più comodamente alle varie macchine in rete)
+\item slave dei due DNS esterni (chiede ai precedenti per quanto riguarda i server della DMZ e per la risoluzione dei nomi di internet)
+\end{itemize} 
+\end{itemize}
+Ciò rende anche più sicura l'intera rete in quanto dall'esterno non è possibile accedere ai nomi interni.
+\newpage
+\section{Sicurezza}
+\subsection{Firewalls}
+Per soddisfare gli standard minimi di sicurezza, si è scelto di adoperare due firewall distinti per DMZ (quattro in totale), configurati tramite \code{iptables}, integrati rispettivamente nei due router Barificio e nei due router di Epitaffio. \\Grazie ad essi, la DMZ risulta protetta sia dagli accessi provenienti dalla rete locale che da quelli esterni, come sopra spiegato.
+\subsection{Hardening: il server per applicazioni aziendali}
+La sicurezza del server per applicazioni aziendali è stata rafforzata filtrando i pacchetti TCP con un wrapper e facendovi girare il superserver \code{xinetd}, che a sua volta monitora le richieste ai servizi telnet, SSH e NFS talvolta, come nel caso di telnet, disabilitandoli completamente.
+
+\newpage
+\section{Preventivo di spesa}
+
+\begin{table}[H]
+	\centering
+	\label{costo componentistica}
+	\resizebox{\textwidth}{!}{\begin{tabular}{ll|l|l|}
+			\hline
+			\multicolumn{1}{|c|}{\textbf{Componente}} & \multicolumn{1}{c|}{\textbf{Quantità}} & \multicolumn{1}{c|}{\textbf{Prezzo cad.}} & \textbf{Prezzo tot.} \\ \hline
+			\multicolumn{1}{|l|}{TP-Link TL-SF1048 Switch 48 Porte} & 4 & 154.34 EUR & 926.04 EUR \\ \hline
+			\multicolumn{1}{|l|}{WiFi access point} & 3 & 130 EUR & 390 EUR \\ \hline
+			\multicolumn{1}{|l|}{Fibra ottica} & 2100 m & 6.34 EUR/m & 13314 EUR \\ \hline
+			\multicolumn{1}{|l|}{Cavo UTP} & 3000 m & 2.65 EUR/m & 7950 EUR \\ \hline
+			\multicolumn{1}{|l|}{VPN} &  & 300 EUR annui & 300 EUR annui \\ \hline
+			&  & TOTALE: & \textbf{22880.04 EUR} \\ \cline{3-4} 
+	\end{tabular}}
+	\caption{Costo delle componenti hardware}
+\end{table}
+\ \\Al costo della componentistica va sommato il costo dell'installazione, pari a 20.000 euro, per un totale complessivo di 42880.04 euro.
 
 \end{document}

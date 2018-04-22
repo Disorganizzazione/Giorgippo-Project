@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.3.7)  22 APR 2018 13:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.3.7)  22 APR 2018 19:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,6 +525,27 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 
 LaTeX Warning: Label `riepilogo' multiply defined.
 
+
+LaTeX Warning: Label `riepilogo' multiply defined.
+
+
+LaTeX Warning: Label `riepilogo' multiply defined.
+
+
+LaTeX Warning: Label `riepilogo' multiply defined.
+
+
+LaTeX Warning: Label `riepilogo' multiply defined.
+
+
+LaTeX Warning: Label `riepilogo' multiply defined.
+
+
+LaTeX Warning: Label `riepilogo' multiply defined.
+
+
+LaTeX Warning: Label `riepilogo' multiply defined.
+
 )
 \openout1 = `Relazione.aux'.
 
@@ -619,7 +640,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `Relazione.toc'.
 
  [2]
-<../Configurazioni/SchemaFisico.png, id=54, 843.15pt x 947.79094pt>
+<../Configurazioni/SchemaFisico.png, id=99, 843.15pt x 947.79094pt>
 File: ../Configurazioni/SchemaFisico.png Graphic file (type png)
 <use ../Configurazioni/SchemaFisico.png>
 Package pdftex.def Info: ../Configurazioni/SchemaFisico.png  used on input line
@@ -633,15 +654,8 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
-
-Overfull \hbox (81.95186pt too wide) in paragraph at lines 73--92
-\OT1/cmr/m/n/10.95 I tre \OT1/cmr/bx/n/10.95 Ser-ver DNS \OT1/cmr/m/n/10.95 si 
-oc-cu-pa-no di tra-dur-re un in-di-riz-zo del-la for-ma http://www.mazziamari.i
-t,
- []
-
-[4]
-<../Configurazioni/SchemaLogico.png, id=68, 3125.6775pt x 1827.82875pt>
+ [4]
+<../Configurazioni/SchemaLogico.png, id=116, 3125.6775pt x 1827.82875pt>
 File: ../Configurazioni/SchemaLogico.png Graphic file (type png)
 <use ../Configurazioni/SchemaLogico.png>
 Package pdftex.def Info: ../Configurazioni/SchemaLogico.png  used on input line
@@ -653,7 +667,7 @@ Overfull \hbox (15.06512pt too wide) in paragraph at lines 99--99
  []
 
 [5 <../Configurazioni/SchemaLogico.png>] [6]
-<../Configurazioni/Agenzia/Agenzia.png, id=80, 1361.085pt x 749.80125pt>
+<../Configurazioni/Agenzia/Agenzia.png, id=128, 1361.085pt x 749.80125pt>
 File: ../Configurazioni/Agenzia/Agenzia.png Graphic file (type png)
 <use ../Configurazioni/Agenzia/Agenzia.png>
 Package pdftex.def Info: ../Configurazioni/Agenzia/Agenzia.png  used on input l
@@ -670,64 +684,105 @@ Overfull \hbox (12.66478pt too wide) in paragraph at lines 115--117
 te con in-di-riz-zo \OT1/cmr/bx/n/10.95 192.168.1.0/24
  []
 
-<../Configurazioni/Barificio/Barificio.png, id=82, 1796.21063pt x 1367.8603pt>
+<../Configurazioni/Barificio/Barificio.png, id=130, 1796.21063pt x 1367.8603pt>
+
 File: ../Configurazioni/Barificio/Barificio.png Graphic file (type png)
 <use ../Configurazioni/Barificio/Barificio.png>
 Package pdftex.def Info: ../Configurazioni/Barificio/Barificio.png  used on inp
-ut line 118.
+ut line 135.
 (pdftex.def)             Requested size: 449.05156pt x 341.96423pt.
 
-Overfull \hbox (89.05156pt too wide) in paragraph at lines 118--118
+Overfull \hbox (89.05156pt too wide) in paragraph at lines 135--135
  [][] 
  []
 
 [7 <../Configurazioni/Agenzia/Agenzia.png>]
-<../Configurazioni/Cremino/Cremino.png, id=91, 1475.5125pt x 1084.05pt>
-File: ../Configurazioni/Cremino/Cremino.png Graphic file (type png)
-<use ../Configurazioni/Cremino/Cremino.png>
-Package pdftex.def Info: ../Configurazioni/Cremino/Cremino.png  used on input l
-ine 121.
-(pdftex.def)             Requested size: 413.14069pt x 303.53194pt.
+Overfull \hbox (27.50815pt too wide) in paragraph at lines 137--139
+\OT1/cmr/m/n/10.95 All'edificio Ba-ri-fi-cio so-no sta-te as-se-gna-te le sot-t
+o-re-ti con in-di-riz-zo \OT1/cmr/bx/n/10.95 192.168.2.0/24
+ []
 
-Overfull \hbox (53.14069pt too wide) in paragraph at lines 121--121
- [][] 
+
+Overfull \hbox (1.57368pt too wide) in paragraph at lines 137--139
+\OT1/cmr/m/n/10.95 Queste so-no rag-giun-gi-bi-li tra-mi-te il rou-ter \OT1/cmr
+/bx/n/10.95 Ba-si-li-sco \OT1/cmr/m/n/10.95 con in-di-riz-zo 212.10.2.3,
  []
 
 [8 <../Configurazioni/Barificio/Barificio.png>]
-<../Configurazioni/Destinazione/Destinazione.png, id=98, 1199.23032pt x 779.160
-93pt>
+<../Configurazioni/Cremino/Cremino.png, id=146, 1475.5125pt x 1084.05pt>
+File: ../Configurazioni/Cremino/Cremino.png Graphic file (type png)
+<use ../Configurazioni/Cremino/Cremino.png>
+Package pdftex.def Info: ../Configurazioni/Cremino/Cremino.png  used on input l
+ine 188.
+(pdftex.def)             Requested size: 413.14069pt x 303.53194pt.
+
+Overfull \hbox (53.14069pt too wide) in paragraph at lines 188--188
+ [][] 
+ []
+
+[9]
+Overfull \hbox (15.43271pt too wide) in paragraph at lines 189--194
+\OT1/cmr/m/n/10.95 All'edificio Cre-mi-no ^^Re sta-ta as-se-gna-ta la sot-to-re
+-te con in-di-riz-zo \OT1/cmr/bx/n/10.95 192.168.3.0/24 
+ []
+
+[10 <../Configurazioni/Cremino/Cremino.png>] [11]
+<../Configurazioni/Destinazione/Destinazione.png, id=165, 1199.23032pt x 779.16
+093pt>
 File: ../Configurazioni/Destinazione/Destinazione.png Graphic file (type png)
 <use ../Configurazioni/Destinazione/Destinazione.png>
 Package pdftex.def Info: ../Configurazioni/Destinazione/Destinazione.png  used 
-on input line 124.
+on input line 215.
 (pdftex.def)             Requested size: 335.7822pt x 218.16357pt.
- [9 <../Configurazioni/Cremino/Cremino.png>]
-<../Configurazioni/Epitaffio/Epitaffio.png, id=105, 1367.1075pt x 1191.7022pt>
+
+Overfull \hbox (35.38606pt too wide) in paragraph at lines 216--218
+\OT1/cmr/m/n/10.95 All'edificio De-sti-na-zio-ne ^^Re sta-ta as-se-gna-ta la so
+t-to-re-te con in-di-riz-zo \OT1/cmr/bx/n/10.95 192.168.4.0/24
+ []
+
+<../Configurazioni/Epitaffio/Epitaffio.png, id=166, 1367.1075pt x 1191.7022pt>
 File: ../Configurazioni/Epitaffio/Epitaffio.png Graphic file (type png)
 <use ../Configurazioni/Epitaffio/Epitaffio.png>
 Package pdftex.def Info: ../Configurazioni/Epitaffio/Epitaffio.png  used on inp
-ut line 127.
+ut line 235.
 (pdftex.def)             Requested size: 341.77603pt x 297.92482pt.
- [10 <../Configurazioni/Destinazione/Destinazione.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
- [11 <../Configurazioni/Epitaffio/Epitaffio.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+[12 <../Configurazioni/Destinazione/Destinazione.png>]
+Overfull \hbox (15.55438pt too wide) in paragraph at lines 236--237
+\OT1/cmr/m/n/10.95 All'edificio Epi-taf-fio ^^Re sta-ta as-se-gna-ta la sot-to-
+re-te con in-di-riz-zo \OT1/cmr/bx/n/10.95 192.168.5.0/24
+ []
+
+<../Configurazioni/DMZ.png, id=174, 1697.5922pt x 687.31781pt>
+File: ../Configurazioni/DMZ.png Graphic file (type png)
+<use ../Configurazioni/DMZ.png>
+Package pdftex.def Info: ../Configurazioni/DMZ.png  used on input line 254.
+(pdftex.def)             Requested size: 339.51242pt x 137.46112pt.
+[13 <../Configurazioni/Epitaffio/Epitaffio.png>] [14 <../Configurazioni/DMZ.png
+>] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+[16] [17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 333.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 333.
  (./Relazione.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 333.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 333.
 Package rerunfilecheck Info: File `Relazione.out' has not changed.
-(rerunfilecheck)             Checksum: B6BDC81D703B3AB70F382FFCE3662F87;434.
+(rerunfilecheck)             Checksum: D4BB695D4600D22DAD9555D8E66F37E1;971.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6386 strings out of 492982
- 90837 string characters out of 6138580
- 189858 words of memory out of 5000000
- 9846 multiletter control sequences out of 15000+600000
- 9157 words of font info for 32 fonts, out of 8000000 for 9000
+ 6428 strings out of 492982
+ 91384 string characters out of 6138580
+ 191903 words of memory out of 5000000
+ 9861 multiletter control sequences out of 15000+600000
+ 9325 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,10n,28p,795b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
@@ -735,11 +790,12 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Relazione.pdf (11 pages, 1002916 bytes).
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Relazione.pdf (18 pages, 1149058 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 92 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

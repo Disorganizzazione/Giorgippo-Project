@@ -2,6 +2,15 @@
 \BOOKMARK [1][-]{section.2}{Schema Logico della rete}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{A: Agenzia}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{B: Barificio}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{C: Cremino}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{D: Destinazione}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{E: Epitaffio}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.1}{DMZ}{subsection.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{C: Cremino}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{D: Destinazione}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{E: Epitaffio}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Rete intermedia}{subsection.2.5}% 9
+\BOOKMARK [3][-]{subsubsection.2.5.2}{DMZ}{subsection.2.5}% 10
+\BOOKMARK [1][-]{section.3}{Routing}{}% 11
+\BOOKMARK [1][-]{section.4}{DNS}{}% 12
+\BOOKMARK [1][-]{section.5}{Sicurezza}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Firewalls}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.2}{Hardening: il server per applicazioni aziendali}{section.5}% 15
+\BOOKMARK [1][-]{section.6}{Preventivo di spesa}{}% 16
