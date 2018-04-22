@@ -1,0 +1,12 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Requisiti del progetto e finalit\IeC {\`a}}{3}{section.1}
+\contentsline {paragraph}{Sono richiesti:}{4}{section*.2}
+\contentsline {section}{\numberline {2}Schema Logico della rete}{5}{section.2}
+\contentsline {paragraph}{Struttura della rete}{5}{section*.3}
+\contentsline {paragraph}{DMZ}{6}{section*.4}
+\contentsline {subsection}{\numberline {2.1}A: Agenzia}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}B: Barificio}{8}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}C: Cremino}{9}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}D: Destinazione}{10}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}E: Epitaffio}{11}{subsection.2.5}

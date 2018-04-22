@@ -1,0 +1,133 @@
+ \documentclass[a4paper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{float} 
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{nameref} 
+
+\graphicspath{{../Configurazioni/}}
+\def\code#1{\texttt{#1}}
+\def\image[#1][#2]#3{
+  \begin{figure}[H]
+  \centering
+  \includegraphics[#2]{#1}
+  \caption{#3}
+  \end{figure}}
+\def\boximage[#1][#2]#3{
+  \begin{figure}[H]
+  \centering
+  \fbox{\includegraphics[#2]{#1}}
+  \caption{#3}
+  \end{figure}}
+ 
+ 
+ 
+
+\title{Progettazione e configurazione di una rete aziendale}
+\author{Filippo Mariani, Giorgio Mazza}
+
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Requisiti del progetto e finalità}
+Un'azienda di onoranze funebri richiede la progettazione e configurazione di una rete aziendale in grado di interconnettere i vari edifici di suddetta azienda.
+Gli edifici sono i seguenti:
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Nome edificio}} & \multicolumn{1}{c|}{\textbf{Numero utenti}} \\ \hline
+Agenzia & 50 \\ \hline
+Barificio & 260 \\ \hline
+Cremino & 200 \\ \hline
+Destinazione & 50 \\ \hline
+Epitaffio & 30 \\ \hline
+\end{tabular}
+\caption{Edifici}
+\end{table}
+ed è richiesto il seguente schema di collegamenti:
+\image[../Configurazioni/SchemaFisico.png][scale=0.3]{Schema Fisico}
+\newpage
+\paragraph{Sono richiesti:} 
+\begin{itemize}
+\item accesso protetto a Internet
+\item copertura WiFi nell'edificio C
+\item un server di posta elettronica
+\item un server di backup 
+\item un server adibito alle applicazioni aziendali (da proteggere con particolare attenzione)
+\end{itemize}
+In oltre, in base a quanto richiesto, si è deciso di configurare:
+\begin{itemize}
+\item tre server DNS
+\item un server proxy 
+\item un server DHCP
+\end{itemize}
+I vari server forniscono servizi agli utenti della rete e servono per il funzionamento stesso della rete.\\
+Il \textbf{Server Mail} si occupa di fornire servizi per la posta elettronica, il \textbf{Server Web} permette a tutte le postazioni della rete di poter accedere alla rete Internet.\\
+Nel \textbf{Server per le applicazioni aziendali} risiedono programmi applicativi in uso all’Azienda.\\
+I tre \textbf{Server DNS} si occupano di tradurre un indirizzo della forma http://www.mazziamari.it, in uno espresso in forma numerica (richiesta per l’accesso ad Internet). Per questo motivo tutte le macchine che accedono ad Internet devono avere specificato il loro DNS Server.\\
+Nel \textbf{Server di Backup} verranno salvati i dati generati dai vari programmi applicativi in uso in modo da garantire una copia di sicurezza.\\
+I sopracitati server sono così disposti:
+\begin{table}[H]
+\centering
+\label{riepilogo}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Nome edificio}} & \multicolumn{1}{c|}{\textbf{Server}} \\ \hline
+Agenzia & - \\ \hline
+Barificio & DNS, Mail, Web, Proxy \\ \hline
+Cremino & DNS, DHCP, App. aziendali \\ \hline
+Destinazione & - \\ \hline
+Epitaffio & DNS, Backup \\ \hline
+\end{tabular}
+\caption{Dislocazione Server}
+\end{table}
+\newpage
+
+\section{Schema Logico della rete}
+La topologia della rete diverge dallo schema fisico della stessa: i quattro edifici più vicini - Agenzia, Barificio, Cremino e Destinazione) sono collegati tramite fibra ottica, così da garantire un servizio veloce, efficente ed affidabile. 
+\\In quanto all'edificio Epitaffio, dato che è molto distante dagli altri, si è deciso di connetterlo ai restanti tramite Virtual Private Network (\textbf{VPN}):\\ ciò permette di costruire una rete privata virtuale su un'infrastruttura pubblica, usando una rete non dedicata (in questo caso Internet).
+L'uso di VPN per l'edificio EPitaffio, rende la soluzione di gran lunga più economica, semplice e sicura rispetto all'uso di altre tecnologie come la fibra ottica.
+\image[../Configurazioni/SchemaLogico.png][scale=0.12]{Schema Logico}
+\paragraph{Struttura della rete}
+Alla rete principale è stato assegnato l'IP di classe B \textbf{192.168.0.0/24}, al quale corrisponde il nome di dominio \\ \textbf{http://www.mazziamari.it}; Questa è stata suddivisa in sottoreti, ognuna corrispondente a ciascun edificio:
+\begin{itemize}
+\item Agenzia: 192.168.1.0/24
+\item Barificio: 192.168.2.0/24 e 192.168.22.0/24
+\item Cremino: 192.168.3.0/24
+\item Destinazione: 192.168.4.0/24
+\item Epitaffio: 192.168.5.0/24
+\end{itemize}
+
+\paragraph{DMZ}
+Per il collegamento a internet degli edifici Barificio ed Epitaffio, si è deciso di introdurre una De-Militarized Zone (DMZ), posta per l'appunto agli estremi della rete, a svolgere funzioni di sicurezza e per contenere i server che forniscono servizi accessibili anche dall'esterno della rete. Questa rete sarà trattata in dettaglio successivamente nei singoli edifici che la contengono.
+\newpage
+\subsection{A: Agenzia}
+\image[../Configurazioni/Agenzia/Agenzia.png][scale=0.28]{Dettaglio sottoreterete 1}
+All'edificio Agenzia è stata assegnata la sottorete con indirizzo \textbf{192.168.1.0/24} (unica sottorete per l'edificio, visto il numero esiguo di utenti che deve ospitare) \\
+Questa è raggiungibile tramite il router \textbf{Anubi} con indirizzo \textbf{192.168.1.3}, tramite le interfacce \textit{192.168.2.12} per \textit{Barificio} e \textit{192.168.2.12} per \textit{Cremino}.
+\subsection{B: Barificio}
+\image[../Configurazioni/Barificio/Barificio.png][scale=0.25]{Dettaglio sottoreterete 2}
+
+\subsection{C: Cremino}
+\image[../Configurazioni/Cremino/Cremino.png][scale=0.28]{Dettaglio sottoreterete 3}
+
+\subsection{D: Destinazione}
+\image[../Configurazioni/Destinazione/Destinazione.png][scale=0.28]{Dettaglio sottoreterete 4}
+
+\subsection{E: Epitaffio}
+\image[../Configurazioni/Epitaffio/Epitaffio.png][scale=0.25]{Dettaglio sottoreterete 5}
+
+
+
+
+
+\end{document}
