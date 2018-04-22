@@ -26,7 +26,7 @@ ifconfig eth0 212.10.2.6 netmask 255.255.255.0 broadcast 212.10.2.255
 ifconfig eth1 180.28.68.43 netmask 255.255.255.255 broadcast 180.28.68.43
 
 # interfaccia su internet per connessione con Epitaffio
-ifconfig eth1 212.11.2.5 netmask 255.255.255.0 broadcast 180.28.2.255
+ifconfig eth3 212.11.2.5 netmask 255.255.255.0 broadcast 180.28.2.255
 
 
 # HOSTS

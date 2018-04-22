@@ -7,3 +7,6 @@ route -n add 212.10.2.10 212.10.2.3 # Bouquet
 route -n add 212.10.2.20 212.10.2.3 # Mogano
 route -n add 212.10.2.30 212.10.2.3 # Noce
 route -n add 212.10.2.40 212.10.2.3 # Rovere
+
+#comunicazione fra DMZ:
+route -n add 212.11.2.5 212.11.5.2
