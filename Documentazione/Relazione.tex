@@ -69,6 +69,7 @@ In oltre, in base a quanto richiesto, si è deciso di configurare:
 \item tre server DNS
 \item un server proxy 
 \item un server DHCP
+\item un server Web
 \end{itemize}
 I vari server forniscono servizi agli utenti della rete e servono per il funzionamento stesso della rete.\\
 Il \textbf{Server Mail} si occupa di fornire servizi per la posta elettronica, il \textbf{Server Web} permette a tutte le postazioni della rete di poter accedere alla rete Internet.\\
@@ -95,7 +96,7 @@ Epitaffio & DNS, Backup \\ \hline
 \section{Schema Logico della rete}
 La topologia della rete diverge dallo schema fisico della stessa: i quattro edifici più vicini - Agenzia, Barificio, Cremino e Destinazione) sono collegati tramite fibra ottica, così da garantire un servizio veloce, efficente ed affidabile. 
 \\In quanto all'edificio Epitaffio, dato che è molto distante dagli altri, si è deciso di connetterlo ai restanti tramite Virtual Private Network (\textbf{VPN}):\\ ciò permette di costruire una rete privata virtuale su un'infrastruttura pubblica, usando una rete non dedicata (in questo caso Internet).
-L'uso di VPN per l'edificio EPitaffio, rende la soluzione di gran lunga più economica, semplice e sicura rispetto all'uso di altre tecnologie come la fibra ottica.
+L'uso di VPN per l'edificio Epitaffio, rende la soluzione di gran lunga più economica, semplice e sicura rispetto all'uso di altre tecnologie come la fibra ottica.
 \image[../Configurazioni/SchemaLogico.png][scale=0.12]{Schema Logico}
 \paragraph{Struttura della rete}
 Alla rete principale è stato assegnato l'IP di classe B \textbf{192.168.0.0/24}, al quale corrisponde il nome di dominio \\ \textbf{http://www.mazziamari.it}; Questa è stata suddivisa in sottoreti, ognuna corrispondente a ciascun edificio:
@@ -202,7 +203,7 @@ Infine è presente un server DNS interno, adibito alla risoluzione dei nomi degl
 Router & Caronte & 192.168.3.3 \\ \hline
 DNS server & Camino & 192.168.3.10 \\ \hline
 DHCP server & Corteo & 192.168.3.20 \\ \hline
-Server app aziendali & Social & 192.168.3.30 \\ \hline
+Server app aziendali & Sociale & 192.168.3.30 \\ \hline
 Host 1 & agenzia01 & 192.168.3.50 \\ \hline
 ... & ... & ...\\ \hline
 Host 50 & agenzia50 & 192.168.3.250 \\ \hline
